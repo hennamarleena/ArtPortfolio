@@ -37,7 +37,7 @@ export const items = [
     category: "paper",
   },
   {
-    img: "/img/aNightOut.jpg",
+    img: "/img/anightOut.jpg",
     title: "A Night Out",
     category: "paper",
     rows: 1,
