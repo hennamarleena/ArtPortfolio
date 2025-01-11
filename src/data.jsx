@@ -1,13 +1,13 @@
 export const items = [
   {
-    img: "img/dreamcatcher.jpg", 
+    img: "/img/dreamcatcher.jpg", 
     title: "Dreamcatcher",
     category: "digital",
     rows: 2,
     cols: 2
   },
   {
-    img: "img/leipaa.jpg",
+    img: "/img/leipaa.jpg",
     title: "Leipälaji",
     rows: 1,
     cols: 1,
@@ -16,35 +16,35 @@ export const items = [
  
   
   {
-    img: "img/enterthevoid.jpg",
+    img: "/img/enterthevoid.jpg",
     title: "Enter The Void",
     category: "paper",
     rows: 1,
     cols: 1
   },
   {
-    img: "img/sinfonia.jpg",
+    img: "/img/sinfonia.jpg",
     title: "Sinfonia",
     cols: 2,
     rows: 1,
     category: "paper",
   },
   {
-    img: "img/humankind.jpg",
+    img: "/img/humankind.jpg",
     title: "Humankind",
     cols: 1,
     rows: 1,
     category: "paper",
   },
   {
-    img: "img/aNightOut.jpg",
+    img: "/img/aNightOut.jpg",
     title: "A Night Out",
     category: "paper",
     rows: 1,
     cols: 1
   },
   {
-    img: "img/amanitas.jpg",
+    img: "/img/amanitas.jpg",
     title: "Amanitas",
     rows: 2,
     cols: 2,
@@ -52,7 +52,7 @@ export const items = [
 
   },
   {
-    img: "img/earthbathing.jpg",
+    img: "/img/earthbathing.jpg",
     title: "Earthbathing",
     category: "digital",
     rows: 1,
@@ -60,14 +60,14 @@ export const items = [
 
   },
   {
-    img: "img/thejourney.jpg",
+    img: "/img/thejourney.jpg",
     title: "The Journey",
     rows: 2,
     cols: 2,
     category: "digital",
   },
   {
-    img: "img/alittlesip.jpg",
+    img: "/img/alittlesip.jpg",
     title: "A Little Sip",
     category: "paper",
     rows: 1,
@@ -75,7 +75,7 @@ export const items = [
   },
  
   {
-    img: "img/cactuspark.jpg",
+    img: "/img/cactuspark.jpg",
     title: "Cactus Park",
     rows: 1,
     cols: 1,
