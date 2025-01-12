@@ -14,4 +14,5 @@ A personal project for showcasing my own collage art.
   [GitHub Repository](https://github.com/igordanchenko/yet-another-react-lightbox)
 - **Material UI** - Component library for creating responsive, modern UIs.
 - **Zustand** - State management library for managing application state.
+- **React-router** - routing
 

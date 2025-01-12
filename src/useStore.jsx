@@ -4,6 +4,7 @@ import { items } from './data';
 const useStore = create((set) => ({
   itemsList: items,
   filteredItemsToShow: items,
+  selectedCategory: "all",
   
   filterItems(category) {
     set((state) => ({

@@ -8,8 +8,8 @@ const theme = useTheme();
 const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-    <Box sx={{ justifyContent: isSmallScreen ? 'center' : 'flex-end'}}>
-      <FormControl size="small">
+    <Box className="type-filter-box" sx={{ justifyContent: isSmallScreen ? 'center' : 'flex-end'}}>
+      <FormControl size="small" className="type-filter-formcontrol">
       <InputLabel id="select-label">Category</InputLabel>
           <Select 
               labelId="select-label" 

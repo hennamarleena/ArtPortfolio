@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { useLocation } from "react-router";
 import { ImageList, ImageListItem, useMediaQuery, } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Lightbox from "yet-another-react-lightbox";
@@ -10,6 +11,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import TypeFilter from "./TypeFilter";
 import useStore from "./useStore";
+import { useEffect } from "react";
 
 export default function ImageGallery() {
   const filterItems = useStore((state) => state.filterItems);
@@ -24,6 +26,14 @@ export default function ImageGallery() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const rowHeight = isSmallScreen ? 160 : isMediumScreen ? 300 : 400;
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      filterItems("all");
+    }
+  }, [location.pathname, filterItems]);
 
   const handleImageClick = (index) => {
     setCurrentIndex(index);
@@ -44,6 +54,8 @@ export default function ImageGallery() {
         cols={3}
         rowHeight={rowHeight}
       >
+        
+
         {filteredItemsToShow.map((item, index) => (
           <ImageListItem
             key={item.img}

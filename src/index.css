@@ -4,14 +4,11 @@
   margin: 0;
 }
 
-:root {
-  background-color: #ffffff;
-}
-
 header {
   background-color: rgb(246, 246, 246);
   text-align: center;
-  padding: 70px;
+  padding-top: 50px;
+  padding-bottom: 30px;
   color: rgb(57, 57, 57);
 }
 
@@ -31,38 +28,73 @@ header p {
   font-family: "Poppins", 'Verdana', sans-serif;
   font-weight: 400;
   font-size: 1.15em;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
-@media (max-width: 500px) {
-  header {
-    padding: 50px;
-  }
-  header h1 {
-  font-size: 1.4em;
-  }
-  header h2 {
-    font-size: 2.2em;
-  }
-  header p {
-    padding-top: 30px;
-    font-size: 1em;
-  }
+.nav-links-container {
+  font-family: Poppins;
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+  padding-top: 30px;
+  justify-content: center;
 }
+
+.nav-links-container a {
+  display: block;
+  color: rgb(90, 90, 90);
+  text-decoration: none;
+  padding: 8px 30px;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.nav-links-container li:first-child {
+  border-right: 1px solid rgb(168, 168, 168);
+}
+
+.nav-links-container a:hover {
+  background-color: #575757;
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px;
+  padding-bottom: 250px;
+  font-family: Poppins;
+}
+
+.email-box {
+  padding: 60px;
+  padding-top: 40px;
+  background-color: #F6F6F6;
+  text-align: center;
+}
+
+.email-box h2 {
+  padding-bottom: 15px;
+}
+
 
 footer {
   font-family: "Poppins", 'Verdana', sans-serif;
   font-weight: 400;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 0.8em;
   background-color: rgb(246, 246, 246);
-  padding: 2em;
-  margin-top: 5px; 
+  margin-top: 5px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
+
 footer img {
-  height: 50px;
-  margin-top: 20px;
+  height: 30px;
+  margin: 20px;
 }
 
 .image {
@@ -97,7 +129,7 @@ footer img {
   transform: scale(1.03);
 }
 
-.MuiBox-root {
+.type-filter-box {
   display: flex;
   margin: 0 auto;
   margin-top: 10px;
@@ -105,7 +137,7 @@ footer img {
   max-width: 1200px; 
 }
 
-.MuiFormControl-root {
+.type-filter-formcontrol {
   width: 250px;
 }
 
@@ -142,5 +174,33 @@ footer img {
   margin: 0 auto !important;
   text-align: center;
   white-space: wrap !important;
+}
+
+@media (max-width: 500px) {
+  header {
+    padding-top: 40px;
+    padding-bottom: 15px;
+  }
+  header h1 {
+  font-size: 1.4em;
+  }
+  header h2 {
+    font-size: 2.2em;
+  }
+  header p {
+    padding-top: 20px;
+    font-size: 1em;
+  }
+  .nav-links-container {
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .type-filter-formcontrol {
+    width: 95%;
+  }
+  .contact-container-box {
+    width: 90%;
+  }
+  
 }
 
