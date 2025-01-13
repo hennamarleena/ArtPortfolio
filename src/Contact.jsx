@@ -9,7 +9,7 @@ export default function Contact() {
             <p>henna.rajakisto@gmail.com</p>
             </Box>
             
-            <form name="contact" method="POST" className="contact-form" data-netlify="true">
+            <form name="contact" method="POST" className="contact-form" data-netlify="true" action="/thank-you">
                 <h2>Send a message</h2>
                 <label htmlFor="name">Name <span style={{color: "red"}}>*</span> <input type="text" id="name" name="name" required /></label>
                 <label htmlFor="email">Email<input type="email" id="email" name="email" /></label>
