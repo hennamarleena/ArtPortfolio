@@ -63,7 +63,9 @@ header p {
   gap: 30px;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
+  padding-top: 100px;
+  padding-bottom: 160px;
+  margin-bottom: 100px;
   font-family: Poppins;
 }
 
@@ -73,7 +75,7 @@ header p {
 }
 
 .email-box {
-  padding: 50px;
+  padding: 60px;
   padding-top: 40px;
   background-color: #fafafa;
   text-align: center;
@@ -87,66 +89,6 @@ header p {
   padding-bottom: 15px;
 }
 
-.contact-form {
-  padding: 20px;
-  width: 60%;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px 0px rgba(155, 155, 155, 0.35);
-  text-align: center;
-}
-
-.contact-form h2 {
-  font-size: 1.5rem;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.contact-form textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.contact-form button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #0056b3;
-}
 
 footer {
   font-family: "Poppins", 'Verdana', sans-serif;
@@ -155,7 +97,7 @@ footer {
   font-size: 0.8em;
   background-color: rgb(246, 246, 246);
   margin-top: 5px;
-  padding-top: 2em;
+  padding-top: 2.5em;
   padding-bottom: 2em;
 }
 
@@ -266,9 +208,11 @@ footer img {
   .type-filter-formcontrol {
     width: 95%;
   }
+  .contact-container {
+    padding: 150px;
+  }
   .contact-container-box {
     width: 90%;
-  }
-  
+  }  
 }
 
