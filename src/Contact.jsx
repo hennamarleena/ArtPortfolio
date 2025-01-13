@@ -10,6 +10,7 @@ export default function Contact() {
             </Box>
             
             <form name="contact" method="POST" className="contact-form" data-netlify="true" action="/thank-you">
+                <input type="hidden" name="contact-form" value="contact" />
                 <h2>Send a message</h2>
                 <label htmlFor="name">Name <span style={{color: "red"}}>*</span> <input type="text" id="name" name="name" required /></label>
                 <label htmlFor="email">Email<input type="email" id="email" name="email" /></label>
