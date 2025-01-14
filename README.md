@@ -6,6 +6,7 @@ A personal project for showcasing my own collage art.
 
 - Browse images using a lightbox.
 - Filter collages by category.
+- Send messages through contact form
 
 ## Technologies Used
 
