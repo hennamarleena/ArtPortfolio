@@ -21,17 +21,10 @@ header h1 {
 
 header h2 {
   font-family: "Poppins", 'Verdana', sans-serif;
-<<<<<<< HEAD
-  font-weight: 300;
-  font-size: 3.5em;
-  margin-top: -10px;
-=======
   font-weight: 200;
   font-size: 3.5em;
   margin-top: -15px;
   letter-spacing: 0.01ch;
-
->>>>>>> develop
 }
 
 header p {
