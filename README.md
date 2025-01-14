@@ -15,4 +15,5 @@ A personal project for showcasing my own collage art.
 - **Material UI** - Component library for creating responsive, modern UIs.
 - **Zustand** - State management library for managing application state.
 - **React-router** - routing
+- **Web3Forms** - for contact form submissions
 
