@@ -48,7 +48,7 @@ export default function ImageGallery() {
     };
 
     fetchImages();
-  }, [setItemsList]); // remove `setLoading` from dependencies
+  }, [setItemsList]);
 
   const handleCategorySelect = (category) => {
     if (category !== selectedCategory) {
@@ -81,7 +81,7 @@ export default function ImageGallery() {
       { cols: 1, rows: 1 }, // 11th image: 1x1
     ];
 
-    return sizePattern[index] || { cols: 1, rows: 1 }; // Default to 1x1
+    return sizePattern[index] || { cols: 1, rows: 1 }; // Default is 1x1
   };
 
   return (
