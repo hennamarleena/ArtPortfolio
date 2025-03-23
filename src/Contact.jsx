@@ -30,10 +30,6 @@ export default function Contact() {
 
     return (
         <Container className="contact-container">
-            <Box className="email-box">
-            <h2>Email</h2>
-            <p>henna.rajakisto@gmail.com</p>
-            </Box>
             <form onSubmit={onSubmit} className="contact-form">
                 <h2>Send a message</h2>
                 <label htmlFor="name">Name <span style={{color: "red"}}>*</span><input type="text" id="name" name="name" required /></label>
