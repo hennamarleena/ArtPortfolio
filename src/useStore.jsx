@@ -1,25 +1,19 @@
-import { create } from "zustand";
+import { create } from 'zustand'
+import { items } from './data';
 
 const useStore = create((set) => ({
-  itemsList: [],
-  filteredItemsToShow: [],
+  itemsList: items,
+  filteredItemsToShow: items,
   selectedCategory: "all",
-
-  setItemsList(items) {
-    set(() => ({
-      itemsList: items,
-      filteredItemsToShow: items,
-    }));
-  },
-
+  
   filterItems(category) {
     set((state) => ({
-      filteredItemsToShow:
-        category === "all"
-          ? state.itemsList
-          : state.itemsList.filter((item) => item.category === category),
+      filteredItemsToShow: category === "all"
+        ? state.itemsList
+        : state.itemsList.filter((item) => item.category === category),
     }));
   },
-}));
+}))
+
 
 export default useStore;
