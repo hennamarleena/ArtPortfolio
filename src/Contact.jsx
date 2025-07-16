@@ -41,6 +41,9 @@ export default function Contact() {
             </form>
             <span>{result}</span>
 
+            <h2>Email</h2>
+            <p>henna.rajakisto@gmail.com</p>
+
         </Container>
     )
 }
