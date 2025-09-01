@@ -198,7 +198,7 @@ header p {
 }
 
 .digital-grid {
-  grid-auto-rows: 400px;
+  grid-auto-rows: 40%
 }
 
 .digital-grid .image-wrapper img {

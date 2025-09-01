@@ -26,7 +26,7 @@ export default function ImageGallery() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // pieni ruutu <600px
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md")); // keskikoko <960px
-  const cols = isSmallScreen ? 1 : isMediumScreen ? 3 : 3; // sarakkeiden määrä gridissä
+  const cols = isSmallScreen ? 3 : isMediumScreen ? 3 : 3; // sarakkeiden määrä gridissä
 
   const location = useLocation(); // react-router hook URL:n seuraamiseen
 

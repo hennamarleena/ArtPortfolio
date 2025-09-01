@@ -84,5 +84,4 @@ export const items = [
     cols: 1,
     category: "digital"
   },
-
 ]
