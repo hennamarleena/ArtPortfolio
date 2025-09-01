@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useState } from "react";
-import { useLocation } from "react-router";
-import { ImageList, ImageListItem, useMediaQuery, } from "@mui/material";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router"; // react-router:n hook URL-pathin seuraamiseen
+import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -11,35 +11,39 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import TypeFilter from "./TypeFilter";
 import useStore from "./useStore";
-import { useEffect } from "react";
 
 export default function ImageGallery() {
-  const filterItems = useStore((state) => state.filterItems);
-  const filteredItemsToShow = useStore((state) => state.filteredItemsToShow);
+  // Zustandista haetaan funktiot ja data
+  const filterItems = useStore((state) => state.filterItems); // suodattaa kuvat valitun kategorian mukaan
+  const filteredItemsToShow = useStore((state) => state.filteredItemsToShow); // suodatetut kuvat
 
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [open, setOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // React state
+  const [selectedCategory, setSelectedCategory] = useState("all"); // valittu kategoria
+  const [open, setOpen] = useState(false); // Lightboxin avoinna/kiinni tila
+  const [currentIndex, setCurrentIndex] = useState(0); // Lightboxin aktiivinen kuva
 
-  // Themed media queries for responsive layout
+  // Material UI teeman ja media queryn käyttö
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const rowHeight = isSmallScreen ? 160 : isMediumScreen ? 300 : 400;
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // pieni ruutu <600px
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md")); // keskikoko <960px
+  const cols = isSmallScreen ? 1 : isMediumScreen ? 3 : 3; // sarakkeiden määrä gridissä
 
-  const location = useLocation();
+  const location = useLocation(); // react-router hook URL:n seuraamiseen
 
+  // Jos käyttäjä on etusivulla "/", näytetään kaikki kuvat oletuksena
   useEffect(() => {
     if (location.pathname === "/") {
       filterItems("all");
     }
   }, [location.pathname, filterItems]);
 
+  // Kun kuvaa klikataan, avataan Lightbox ja asetetaan aktiivinen indeksi
   const handleImageClick = (index) => {
     setCurrentIndex(index);
     setOpen(true);
   };
 
+  // Kun kategoria valitaan suodattimesta, päivitetään state ja filtteroidaan kuvat
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     filterItems(category);
@@ -47,47 +51,65 @@ export default function ImageGallery() {
 
   return (
     <>
-      <TypeFilter onSelect={handleCategorySelect}/>
+      <TypeFilter onSelect={handleCategorySelect} />
 
-      <ImageList
-        variant="quilted"
-        cols={3}
-        rowHeight={rowHeight}
+      {/* CSS Grid kuville */}
+      <div
+        className={`grid-container ${selectedCategory === "digital" ? "digital-grid" : ""}`} // lisää luokka digital-grid vain digital-filterissä jotta pystykuva ei sotke asettelua
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${cols}, 1fr)`, // sarakkeiden määrä
+          gap: "0px",
+          maxWidth: "1200px",
+          margin: "0 auto"
+        }}
       >
-        
-
+        {/* Loopataan suodatetut kuvat */}
         {filteredItemsToShow.map((item, index) => (
-          <ImageListItem
+          <div
             key={item.img}
-            cols={selectedCategory === "all" ? item.cols : 1}
-            rows={selectedCategory === "all" ? item.rows : 1}
-            onClick={() => handleImageClick(index)}
+            onClick={() => handleImageClick(index)} // Lightboxin avaus
             className="image-wrapper"
+            style={{
+              // Jos valittu kategoria on all, käytetään kuvan määriteltyjä sarake- ja rivitietoja
+              gridColumn: `span ${
+                selectedCategory === "all" ? item.cols || 1 : 1
+              }`,
+              gridRow: `span ${
+                selectedCategory === "all" ? item.rows || 1 : 1
+              }`,
+              cursor: "pointer",
+              overflow: "hidden",
+              position: "relative",
+            }}
           >
             <img
               src={item.img}
               alt={item.title}
               loading="lazy"
-              className="image"
             />
-            <div className="hover-title">{item.title}<br/><span style={{fontSize: "15px"}}>{item.category} collage</span></div>
-          </ImageListItem>
-        ))}
-      </ImageList>
 
-      {/* Lightbox for displaying enlarged images */}
+            {/* tekstiboxi kuvan päällä */}
+            <div className="hover-title">
+              {item.title}
+              <br />
+              <span style={{ fontSize: "14px" }}>{item.category} collage</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <Lightbox
         plugins={[Captions, Zoom]}
         zoom={{ scrollToZoom: true, maxZoomPixelRatio: 1.2 }}
         open={open}
         close={() => setOpen(false)}
-        index={currentIndex}
+        index={currentIndex} // mikä kuva aktiivisena
         slides={filteredItemsToShow.map((item) => ({
           src: item.img,
           alt: item.title + " " + item.category,
           title: item.title + ", " + item.category + " collage",
         }))}
-        
       />
     </>
   );
