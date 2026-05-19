@@ -8,13 +8,12 @@ export default function Contact() {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
-
     const formData = new FormData(event.target);
     formData.append("access_key", "6845ebfa-9aae-4dce-889a-3253cffe718e");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData,
+      body: formData
     });
 
     const data = await response.json();
@@ -49,7 +48,7 @@ export default function Contact() {
           <textarea id="message" name="message" required />
         </label>
 
-        <input type="hidden" name="access_key" value="6845ebfa-9aae-4dce-889a-3253cffe718e" />
+        {/* <input type="hidden" name="access_key" value="6845ebfa-9aae-4dce-889a-3253cffe718e" /> */}
 
         <button type="submit">Submit</button>
       </form>
