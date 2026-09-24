@@ -6,10 +6,10 @@ export const items = [
     rows: 1,
     cols: 1
   },
-  {
-    img: "/img/the_cleanup.png", 
-    title: "The cleanup",
-    category: "paper",
+    {
+    img: "/img/earthbathing.jpg",
+    title: "Earthbathing",
+    category: "digital",
     rows: 2,
     cols: 2
   },
@@ -93,9 +93,9 @@ export const items = [
     category: "digital",
   },
   {
-    img: "/img/earthbathing.jpg",
-    title: "Earthbathing",
-    category: "digital",
+    img: "/img/the_cleanup.png", 
+    title: "The cleanup",
+    category: "paper",
     rows: 1,
     cols: 1
   },
@@ -105,5 +105,26 @@ export const items = [
     rows: 1,
     cols: 1,
     category: "digital"
+  },
+  {
+    img: "/img/mushrooms.png",
+    title: "Mushrooms",
+    rows: 1,
+    cols: 1,
+    category: "paper"
+  },
+      {
+    img: "/img/Blinding-eye.png",
+    title: "The Blinding Eye",
+    rows: 2,
+    cols: 2,
+    category: "paper"
+  },
+    {
+    img: "/img/trash.png",
+    title: "Trash",
+    rows: 1,
+    cols: 1,
+    category: "paper"
   },
 ]
