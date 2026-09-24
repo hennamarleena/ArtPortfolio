@@ -1,25 +1,48 @@
 export const items = [
   {
+    img: "/img/walking_into.png", 
+    title: "Walking into",
+    category: "paper",
+    rows: 1,
+    cols: 1
+  },
+  {
+    img: "/img/the_cleanup.png", 
+    title: "The cleanup",
+    category: "paper",
+    rows: 2,
+    cols: 2
+  },
+  {
+    img: "/img/Kippis.png", 
+    title: "Kippis!",
+    category: "paper",
+    rows: 1,
+    cols: 1
+  },
+  {
     img: "/img/dreamcatcher.jpg", 
     title: "Dreamcatcher",
     category: "digital",
     rows: 2,
     cols: 2
   },
-    {
+  {
     img: "/img/kosmoskyna.png", 
     title: "Magazine cover for Kosmoskynä 2-3/2025",
     category: "digital",
     rows: 1,
     cols: 1,
   },
-       {
+
+  {
     img: "/img/sinfonia.jpg",
     title: "Sinfonia",
     cols: 1,
     rows: 1,
     category: "paper",
   },
+  
     {
     img: "/img/enterthevoid.jpg",
     title: "Enter The Void",
@@ -41,7 +64,6 @@ export const items = [
     cols: 1,
     category: "paper",
   },
-  
     {
     img: "/img/anightout.jpg",
     title: "A Night Out",
